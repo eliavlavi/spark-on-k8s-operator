@@ -53,7 +53,8 @@ spec:
         {{ end }}
         args:
         - -v={{ .Values.logLevel }}
-        - -logtostderr
+        - -logtostderr=false
+        - -stderrthreshold=2
         - -namespace={{ .Values.sparkJobNamespace }}
         - -ingress-url-format={{ .Values.ingressUrlFormat }}
         - -controller-threads={{ .Values.controllerThreads }}
